@@ -30,3 +30,13 @@ body {
   font-size: 20px;
 
 }
+.qa_set {
+    display: none;
+}
+.qa_set.active {
+display: block;
+}
+.qa_set h4 {
+    margin: 0 0 15px;
+}
+
