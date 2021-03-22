@@ -7,8 +7,9 @@ var scoreCount = 0;
 var duration = 0;
 var counter = 0;
 var currentQuestion = 0;
+var question = 0;
 var qaSet = document.querySelectorAll('.qa_set');
-var qaAnswerRow = document.querySelectorAll('.qa_set .qa_ans_row input');
+var qaAnsRow = document.querySelectorAll('.qa_set .qa_ans_row input');
 var qaBody = document.querySelector('.qa_body');
 var questions = [{
     question: "1. What does HTML stands for ?",
@@ -18,18 +19,25 @@ var questions = [{
     option4: "Hyper Text Manipulating Language",
 },
 {
-    question: "3. What does event.preventDefault() do?",
+    question: "2. What does event.preventDefault() do?",
     option1: "Not defined",
     option2: "It stops the browser from allowing the form submission event to occur.",
     option3: "It stops the browser from reloading the page upon a form submission.",
     option4: "Does not do anything",
 },
 {
-    question: "2. In the DOM's event object, what does its target property refer to?",
-    option1: "It refers to the HTML element that was interacted with to dispatch the event.",
+    question: "3. In the DOM's event object, what does its target property refer to?",
+    option1: "Not defined",
     option2: "It refers to the HTML element we want to affect as a result of our dispatched event.",
-    option3: "Not defined",
+    option3: "It refers to the HTML element that was interacted with to dispatch the event.",
     option4: "Wrong statement",
+},
+{
+    question: "4. Which symbol is used for comments in Javascript?",
+    option1: "// for Single line comments",
+    option2: "/* Multi",
+    option3: "Line",
+    option4: "*/",  
 }
 ]
 
