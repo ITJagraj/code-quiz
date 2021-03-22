@@ -38,9 +38,55 @@ var questionBlock = `<h4>${questions[currentQuestion].question}</h4>
             qaBody.innerHTML = questionBlock
 
 }
+var questions = [{
+    question: "2. In the DOM’s event object, what does its target property refer to?", 
+    option1: "Hyperlinks and text Markup Language",
+    option2: "Home tool Markup Language",
+    option3: "Hyper Text Markup Language",
+    option4: "Hyper Text Manipulating Language",
+}]
+function code() {
+    var questionBlock = `<h4>${questions[currentQuestion].question}</h4>
+    <div class="qa_ans_row">
+        <input type="radio" name="a1">
+        <span>${questions[currentQuestion].option1}</span>
+    </div>
+        <div class="qa_ans_row">
+            <input type="radio" name="a1">
+            <span>${questions[currentQuestion].option2}</span>
+        </div>
+            <div class="qa_ans_row">
+                <input type="radio" name="a1" valid= "valid">
+                <span>${questions[currentQuestion].option3}</span>
+            </div>
+                <div class="qa_ans_row">
+                    <input type="radio" name="a1">
+                    <span>${questions[currentQuestion].option4}</span>
+                </div>`
+                qaBody.innerHTML = questionBlock
+
+function option() {
+var questionBlock = `<h4>${questions[currentQuestion].question}</h4>
+<div class="qa_ans_row">
+    <input type="radio" name="a1">
+    <span>${questions[currentQuestion].option1}</span>
+</div>
+    <div class="qa_ans_row">
+        <input type="radio" name="a1">
+        <span>${questions[currentQuestion].option2}</span>
+    </div>
+        <div class="qa_ans_row">
+            <input type="radio" name="a1" valid= "valid">
+            <span>${questions[currentQuestion].option3}</span>
+        </div>
+            <div class="qa_ans_row">
+                <input type="radio" name="a1">
+                <span>${questions[currentQuestion].option4}</span>
+            </div>`
+            qaBody.innerHTML = questionBlock
 
 skip.addEventListener('click', function() {
-    step()
+    step();
 })
 function step() {
     count += 1;
