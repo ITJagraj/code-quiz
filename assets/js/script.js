@@ -7,6 +7,7 @@ var scoreCount = 0;
 var duration = 0;
 var counter = 0;
 var currentQuestion = 0;
+var question = 0;
 var qaSet = document.querySelectorAll('.qa_set');
 var qaAnsRow = document.querySelectorAll('.qa_set .qa_ans_row input');
 var qaBody = document.querySelector('.qa_body');
@@ -87,6 +88,9 @@ qaAnsRow.forEach(function (qaAnsRowSingle) {
 });
 function step() {
     console.log(qaSet);
-    currentQuestion += 1;
+    if (currentQuestion < questions.length-1) {
+        currentQuestion += 1;
+    }
     code();
 }
+code();
