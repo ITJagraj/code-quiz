@@ -5,6 +5,7 @@ var countdown = document.getElementById('coundown');
 var count = 0;
 var scorecount = 0;
 var duration = 0;
+var counter = 0;
 var currentQuestion = 0;
 var qaSet = document.querySelectorAll('.qa_set');
 var qaAnswer = document.querySelectorAll('.qa_set .qa_ans_row input');
@@ -38,7 +39,8 @@ var questionBlock = `<h4>${questions[currentQuestion].question}</h4>
             qaBody.innerHTML = questionBlock
 
 }
-var questions = [{
+
+var scores = [{
     question: "2. In the DOM’s event object, what does its target property refer to?", 
     option1: "It refers to the HTML element that was interacted with to dispatch the event.",
     option2: "It refers to the HTML element we want to affect as a result of our dispatched event.",
@@ -46,7 +48,7 @@ var questions = [{
     option4: "Wrong statement",
 }]
 
-var questions = [{
+var names = [{
     question: "3. What does event.preventDefault() do?", 
     option1: "Not defined",
     option2: "It stops the browser from allowing the form submission event to occur.",
@@ -58,9 +60,9 @@ skip.addEventListener('click', function() {
     step();
 })
 function step() {
-    currentQuestion += 1;
+    console.log(qaSet);
     code();
-    for (var i = 0; 1 < qaSet.length; i++ ) {
+    for (var i = 0; i < qaSet.length; i++ ) {
         qaSet[i].className = 'qa_set' ;
     }
     qaSet[count].className = 'qa_set active'; 
