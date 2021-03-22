@@ -7,7 +7,6 @@ var scoreCount = 0;
 var duration = 0;
 var counter = 0;
 var currentQuestion = 0;
-var question = 0;
 var qaSet = document.querySelectorAll('.qa_set');
 var qaAnsRow = document.querySelectorAll('.qa_set .qa_ans_row input');
 var qaBody = document.querySelector('.qa_body');
@@ -44,6 +43,7 @@ var questions = [{
 
 function code() {
     var questionBlock = `<h4>${questions[currentQuestion].question}</h4>
+    console.log(questionBlock);
 <div class="qa_ans_row">
     <input type="radio" name="a1">
     <span>${questions[currentQuestion].option1}</span>
