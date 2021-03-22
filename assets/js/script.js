@@ -39,26 +39,20 @@ var questionBlock = `<h4>${questions[currentQuestion].question}</h4>
 
 }
 var questions = [{
-    question: "2. In the DOM's event object, what does its target property refer to?", 
-    option1: "It refers to the HTML element that was interacted with to dispatch the event",
+    question: "2. In the DOM’s event object, what does its target property refer to?", 
+    option1: "It refers to the HTML element that was interacted with to dispatch the event.",
     option2: "It refers to the HTML element we want to affect as a result of our dispatched event.",
-{
-    question: "question",
-    option1: "1",
-    option2: "2",
-}
-]
-var questions = [{
-    question: "2. What does event.preventDefault() do?", 
-    option1: "It stops the browser from reloading the page upon a form submission.",
-    option2: "It stops the browser from allowing the form submission event to occur.",
-{
-    question: "question",
-    option1: "1",
-    option2: "2",
-}
-]
+    option3: "Not defined",
+    option4: "Wrong statement",
+}]
 
+var questions = [{
+    question: "3. What does event.preventDefault() do?", 
+    option1: "Not defined",
+    option2: "It stops the browser from allowing the form submission event to occur.",
+    option3: "It stops the browser from reloading the page upon a form submission.",
+    option4: "Does not do anything",
+}]
 
 skip.addEventListener('click', function() {
     step();
