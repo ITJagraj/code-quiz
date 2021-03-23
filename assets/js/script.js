@@ -17,6 +17,7 @@ var questions = [{
     option2: "Home tool Markup Language",
     option3: "Hyper Text Markup Language",
     option4: "Hyper Text Manipulating Language",
+    correctAnswer: 'option3',
 },
 {
     question: "2. What does event.preventDefault() do?",
@@ -41,10 +42,18 @@ var questions = [{
 }
 ]
 
+function next() {
+    var user_answer = document.querySelector("questions.option.active").innerHTML
+    if (user_answer === questions[currentQuestion].correctAnswer){
+        point +=10;
+    }
+    question_count++;
+    console.log(scoreCount);
+}
+
 
 function code() {
     var questionBlock = `<h4>${questions[currentQuestion].question}</h4>
-    console.log(questionBlock);
 <div class="qa_ans_row">
     <input type="radio" name="a1">
     <span>${questions[currentQuestion].option1}</span>
@@ -68,24 +77,7 @@ function code() {
 skip.addEventListener('click', function () {
     step();
 })
-qaAnsRow.forEach(function (qaAnsRowSingle) {
-    qaAnsRowSingle.addEventListener('click', function () {
-        setTimeout(function () {
-            step();
-        }, 500)
-        var valid = this.getattribute("valid");
-        if (valid == "valid") {
-            scoreCount += 20;
-            score.innerHTML = scoreCount;
-            totalScore.innerHTML = scoreCount;
-        } else {
-            scoreCount -= 20;
-            score.innerHTML = scoreCount;
-            totalScore.innerHTML = scoreCount;
 
-        }
-    })
-});
 function step() {
     console.log(qaSet);
     if (currentQuestion < questions.length-1) {
