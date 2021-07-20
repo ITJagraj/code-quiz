@@ -89,3 +89,6 @@ transition: all 0.3s ease-out;
 .btn1:hover {
 background-color: #064484;
 }
+.hide {
+    display: none;
+}
