@@ -10,6 +10,7 @@ var optionsDiv = document.getElementById("options");
 var counter = 0;
 var timer;
 var currentQuestionIndex = 0;
+var saveScore = document.querySelector(".table");
 var qaSet = document.querySelectorAll('.qa_set');
 var qaAnsRow = document.querySelectorAll('.qa_set .qa_ans_row input');
 var qaBody = document.querySelector('.qa_body');
@@ -83,5 +84,15 @@ function countDownTimer() {
 function gameover() {
     clearInterval(timer)
     score.textContent = time
+}
+
+funciton saveScore() {
+    playerInitials = text.value.toupperCase();
+    console.log(playerInitials);
+    scores.push({initials: playerInitials,score: finalScore});
+    console.log(scores);
+    localStorage.setItem("scores", JSON.stringify(scores));
+    displayHighScores(playerInitials);
+    // displayHighScores();
 }
 startBtn.addEventListener("click", start)
