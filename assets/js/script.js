@@ -19,32 +19,29 @@ var questions = [{
     correctAnswer: "Hyper Text Markup Language"
 },
 {
-    question: "2. What does event.preventDefault() do?",
+    question: "3. In the DOM's event object, what does its target property refer to?",
+    options: ["Not defined", "It refers to the HTML element we want to affect as a result of our dispatched event.", "It refers to the HTML element that was interacted with to dispatch the event.", "Wrong statement",],
+    correctAnswer: "It refers to the HTML element that was interacted with to dispatch the event."
+},
+{
+    question: "4. What does event.preventDefault() do?",
     options: ["Not defined", "It stops the browser from allowing the form submission event to occur.", "It stops the browser from reloading the page upon a form submission.", "Does not do anything"],
     correctAnswer: "It stops the browser from reloading the page upon a form submission.",
 },
-    // {
-    //     question: "3. In the DOM's event object, what does its target property refer to?",
-    //     option1: "Not defined",
-    //     option2: "It refers to the HTML element we want to affect as a result of our dispatched event.",
-    //     option3: "It refers to the HTML element that was interacted with to dispatch the event.",
-    //     option4: "Wrong statement",
-    //     correctAnswer: "option3",
-    // },
-    // {
-    //     question: "4. Which symbol is used for comments in Javascript?",
-    //     option1: "// for Single line comments",
-    //     option2: "/* Multi",
-    //     option3: "Line",
-    //     option4: "*/",  
-    //     correctAnswer: "option3",
-    // }
+{
+    uestion: "4. Which symbol is used for comments in Javascript?",
+    options: ["for Single line comments", "/* Multi", "It stops the browser from reloading the page upon a form submission.", "Line","*/",],
+    correctAnswer: "*/", 
+}
+
 ]
 var time = questions.length * 15;
 function start() {
     var startDiv = document.getElementById("start-btn");
     startDiv.classList.add("hide");
     questionDiv.classList.remove("hide");
+    timer = setInterval(countDownTimer, 1000);
+    countDown.textContent = time;
     renderQuestion();
 
 }
@@ -63,17 +60,28 @@ function renderQuestion() {
 }
 
 function answerClick() {
-    if (this.value !== questions[currentQuestionIndex].correctAnswer ) { 
+    if (this.value !== questions[currentQuestionIndex].correctAnswer) {
         console.log("wrong")
     } else {
         console.log("correct")
     }
     currentQuestionIndex++;
     if (currentQuestionIndex === questions.length) {
-        console.log("gameover")
-        
+        gameover()
     } else {
         renderQuestion();
     }
+}
+
+function countDownTimer() {
+    time--;
+    countDown.textContent = time;
+    if (time <= 0) {
+        gameover()
+    }
+}
+function gameover() {
+    clearInterval(timer)
+    score.textContent = time
 }
 startBtn.addEventListener("click", start)
