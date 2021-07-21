@@ -48,6 +48,7 @@ function start() {
 }
 function renderQuestion() {
     var currentQuestion = questions[currentQuestionIndex];
+    console.log(currentQuestionIndex);
     questionTitle.textContent = currentQuestion.question;
     optionsDiv.innerHTML = "";
     currentQuestion.options.forEach(function (option) {
@@ -59,8 +60,10 @@ function renderQuestion() {
         optionsDiv.appendChild(answer);
     })
 }
-
+console.log(currentQuestionIndex)
+console.log(questions[currentQuestionIndex])      
 function answerClick() {
+    console.log(currentQuestionIndex)
     if (this.value !== questions[currentQuestionIndex].correctAnswer) {
         console.log("wrong")
     } else {
@@ -86,7 +89,7 @@ function gameover() {
     score.textContent = time
 }
 
-funciton saveScore() {
+function saveScore() {
     playerInitials = text.value.toupperCase();
     console.log(playerInitials);
     scores.push({initials: playerInitials,score: finalScore});
