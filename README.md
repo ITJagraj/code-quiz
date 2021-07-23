@@ -13,3 +13,6 @@ Timed code quiz that deduct time from timer when user answer the question wrong.
 
 ![quiz](https://user-images.githubusercontent.com/45189679/126561418-7494c9ee-d03e-4ac4-ac3f-07e241782018.png)
 
+# Website Link:
+
+https://itjagraj.github.io/code-quiz/
