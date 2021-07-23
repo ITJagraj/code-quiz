@@ -92,8 +92,8 @@ function gameover() {
 function saveScore() {
     playerInitials = text.value.toupperCase();
     console.log(playerInitials);
-    scores.push({initials: playerInitials,score: finalScore});
-    console.log(scores);
+    scores.push({initials: playerInitials,score: score});
+    console.log(correctAnswer);
     localStorage.setItem("scores", JSON.stringify(scores));
     displayHighScores(playerInitials);
     // displayHighScores();
